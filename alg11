@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	var x string
+
+	fmt.Print("escreva uma string: ")
+	fmt.Scan(&x)
+
+	vogais := []string{"A", "a", "E", "e", "I", "i", "O", "o", "U", "u"}
+
+	for _, vogal := range vogais {
+		x = strings.ReplaceAll(x, vogal, "")
+	}
+	fmt.Print(x)
+}
