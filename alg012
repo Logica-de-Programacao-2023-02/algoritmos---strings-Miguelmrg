@@ -1,0 +1,24 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	var x string
+
+	fmt.Print("digite uma string: ")
+	fmt.Scan(&x)
+
+	var reverse string
+
+	for i := len(x) - 1; i >= 0; i-- {
+		reverse = reverse + string(x[i])
+	}
+
+	if x == reverse {
+		fmt.Println("É palíndromo")
+	} else {
+		fmt.Println("Não é palíndromo")
+	}
+}
