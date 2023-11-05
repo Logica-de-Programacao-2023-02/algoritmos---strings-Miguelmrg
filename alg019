@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main() {
+	var input string
+
+	fmt.Print("Digite uma string: ")
+	fmt.Scan(&input)
+
+	tamanho := len(input)
+
+	fmt.Print("String invertida: ")
+	for i := tamanho - 1; i >= 0; i-- {
+		fmt.Print(string(input[i]))
+	}
+	fmt.Println() // <- quebra de linha para melhor formatação.
+}
