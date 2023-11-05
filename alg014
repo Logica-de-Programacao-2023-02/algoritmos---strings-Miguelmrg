@@ -1,0 +1,31 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+func main() {
+	var input string
+
+	fmt.Print("Digite uma sequência numérica: ")
+	fmt.Scan(&input)
+
+	if SequenciaDecrescente(input) {
+		fmt.Println("É uma sequência numérica decrescente.")
+	} else {
+		fmt.Println("Não é uma sequência numérica decrescente.")
+	}
+}
+func SequenciaDecrescente(s string) bool {
+	runes := []rune(s)
+
+	for i := 0; i < len(runes)-1; i++ {
+		numeroAtual, _ := strconv.Atoi(string(runes[i]))
+		proximoNumero, _ := strconv.Atoi(string(runes[i+1]))
+
+		if numeroAtual <= proximoNumero {
+			return false
+		}
+	}
+	return true
+}
