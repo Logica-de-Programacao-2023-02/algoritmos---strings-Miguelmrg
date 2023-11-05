@@ -1,0 +1,19 @@
+package main
+
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	var x string
+	fmt.Println("digite um número:")
+	fmt.Scan(&x)
+
+	_, err := strconv.ParseFloat(x, 64)
+	if err == nil {
+		fmt.Println("é um número em float")
+	} else {
+		fmt.Println("o valor não é valido em float")
+	}
+}
