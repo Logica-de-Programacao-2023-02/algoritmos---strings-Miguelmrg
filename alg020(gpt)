@@ -1,0 +1,38 @@
+package main
+
+import (
+	"fmt"
+	"unicode"
+)
+
+func main() {
+	var input string
+
+	// Solicita ao usuário para inserir uma string
+	fmt.Print("Digite uma string em camelCase: ")
+	fmt.Scan(&input)
+
+	// Verifica se a string está em camelCase e conta o número de palavras
+	numPalavras := contarPalavrasCamelCase(input)
+
+	// Informa ao usuário se a string está em camelCase e quantas palavras possui
+	if numPalavras > 0 {
+		fmt.Printf("A string está em camelCase e possui %d palavras.\n", numPalavras)
+	} else {
+		fmt.Println("A string não está em camelCase.")
+	}
+}
+
+func contarPalavrasCamelCase(s string) int {
+	numPalavras := 1
+
+	// Percorre cada caractere da string
+	for i := 1; i < len(s); i++ {
+		// Verifica se o caractere atual está em maiúscula
+		if unicode.IsUpper(rune(s[i])) {
+			numPalavras++
+		}
+	}
+
+	return numPalavras
+}
