@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main(){
+	var nome string
+
+	fmt.Println("escreva seu nome em letras minúsculas: ")
+	fmt.Scan(&nome)
+
+	Nome := strings.ToUpper(nome)
+	fmt.Println("o seu nome em letras maiúsculas é: ", Nome)
+}
